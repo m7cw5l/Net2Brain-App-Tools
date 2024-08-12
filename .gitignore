@@ -173,3 +173,4 @@ cython_debug/
 # CoreML packages exported from conversion script
 *.mlpackage/
 
+.DS_Store

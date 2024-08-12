@@ -1,0 +1,7 @@
+numpy
+pycollada
+nilearn
+coremltools
+torch
+torchvision
+scipy

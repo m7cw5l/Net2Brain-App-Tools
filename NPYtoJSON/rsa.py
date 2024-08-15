@@ -3,6 +3,7 @@ import os
 import json
 import gzip
 
+# the function folderlookup is copied from the rsa.py file in Net2Brain
 def folderlookup(path):
     """Looks at the available files and returns the chosen one
     Args:
@@ -30,7 +31,6 @@ def loadnpz(path):
 
 for dataset in ["78images", "92images"]:
     brain_data_path = f"brain_datasets/{dataset}/"
-    #model_rdms_path = "rdm/"
 
     brain_rdms = folderlookup(brain_data_path)
 
@@ -54,23 +54,3 @@ for dataset in ["78images", "92images"]:
 
         with open(f"json_files/brain_datasets/{dataset}/{dataset}_{roi.replace(".npz", "")}.gzip", "wb") as file_output:
                 file_output.write(gzip_data)
-
-
-#brain_rdm = loadnpz(brain_data_path + "fmri_EVC_RDMs.npz")
-#brain_rdm = np.load(brain_data_path + "fmri_IT_RDMs.npz")
-
-#key = list(brain_rdm.keys())[0]
-#meg_rdm = brain_rdm[key]
-
-#print(meg_rdm.shape)
-
-#model_rdm = np.load(model_rdms_path + "layer3.1.conv2.npz")
-
-#key = list(model_rdm.keys())[0]
-#model_rdm = model_rdm[key]
-
-#print(model_rdm.shape)
-
-#sq_model = squareform(model_rdm, force='tovector', checks=False)
-
-#print(sq_model.shape)

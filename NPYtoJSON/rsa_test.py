@@ -32,7 +32,6 @@ for case, file_list in cases.items():
                 "significance": float(row["Significance"]),
                 "sem": float(row["SEM"])
             }
-            #print(data)
             result_data.append(data)
 
         json_dumped = json.dumps(result_data)
@@ -45,7 +44,6 @@ for case, file_list in cases.items():
     for file in file_list:
         # convert npz files
         layer_distance = loadnpz(f"{test_data_path}/{case}/{file}")
-        #print(layer_distance.shape)
         model_flatten_np = layer_distance.flatten()
 
         flatten_layer = list()

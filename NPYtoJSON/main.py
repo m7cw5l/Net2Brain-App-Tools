@@ -16,7 +16,6 @@ for hemisphere in ["left", "right"]:
     surface_array = list()
 
     for vector in brain_vertices:
-        # vertices_array.append([float(vector[0]), float(vector[1]), float(vector[2])])
         vertices_array.append({"x": float(vector[0]),"y": float(vector[1]),"z": float(vector[2])})
 
     for vector in brain_normals:

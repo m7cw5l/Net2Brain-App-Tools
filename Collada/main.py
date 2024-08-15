@@ -45,10 +45,8 @@ geom = geometry.Geometry(mesh, "geometry0", f"brain_{hemisphere}", [vert_src])
 
 input_list = source.InputList()
 input_list.addInput(0, 'VERTEX', "#surf_mesh_coordinates")
-#input_list.addInput(1, 'COLOR', "#surf_map")
 
 indices = surf_mesh_faces
-#indices = np.array(range(0,(len(surf_mesh_coordinates))))
 
 triset = geom.createTriangleSet(indices, input_list, "materialref")
 triset.generateNormals()
@@ -77,4 +75,5 @@ myscene = scene.Scene("myscene", [node])
 mesh.scenes.append(myscene)
 mesh.scene = myscene
 
+# exports the mesh to a .dae file
 #mesh.write(f'brain_{hemisphere}.dae')

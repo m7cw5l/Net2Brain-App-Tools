@@ -5,10 +5,6 @@ import numpy as np
 lh_fmri = np.load("brain_models/fmri/lh_training_fmri.npy")
 rh_fmri = np.load("brain_models/fmri/rh_training_fmri.npy")
 
-#image_index = 0
-
-#hemisphere = "left"
-#roi = "visual"
 
 def save_surface(surface_np):
     surface_array = list()

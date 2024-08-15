@@ -104,17 +104,9 @@ def create_model(model_name):
     ts_model = torch.jit.trace(model, dummy_input)
 
     # Convert to mlpackage
-    # mlpackage_obj = ct.convert(
-    #     ts_model,
-    #     convert_to="mlprogram",
-    #     inputs=[ct.TensorType(name='image', shape=dummy_input.shape)],
-    #     outputs=[ct.TensorType(name=name) for name in out._fields]
-    # )
-
     mlpackage_obj = ct.convert(
         ts_model,
         convert_to="mlprogram",
-        #compute_precision=ct.precision.FLOAT16,
         inputs=[ct.ImageType(name='image', shape=dummy_input.shape, channel_first=True, color_layout=ct.colorlayout.RGB)],
         outputs=[ct.TensorType(name=name) for name in out._fields]
     )

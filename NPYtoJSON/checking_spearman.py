@@ -28,7 +28,6 @@ def model_spearman(model_rdm, rdms):
 
     model_rdm_sq = sq(model_rdm)
     return [stats.spearmanr(sq(rdm), model_rdm_sq)[0] for rdm in rdms]
-    #return [stats.spearmanr(rdm.flatten(), model_rdm.flatten())[0] for rdm in rdms]
 
 
 def folderlookup(path):

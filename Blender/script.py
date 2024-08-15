@@ -11,7 +11,6 @@ base_import_path = "../GiftiConvert/export"
 base_export_path = ""
 
 
-
 roi_keys = [
     ("all-vertices", "all"),
     ("floc-bodies", "body"),
@@ -22,14 +21,7 @@ roi_keys = [
     ("streams", "anatomical")
 ]
 
-#hemispheres = ["left", "right"]
-
 context = bpy.context
-
-#hemisphere = selected_hemisphere
-
-#roi = [y[0] for x, y in enumerate(roi_keys) if y[1] == selected_roi]
-#roi = roi_keys[roi_index][1]
 
 # create basic brain mesh
 vertices = numpy.load(f"{base_import_path}/{hemisphere}/brain_model/brain_coordinates.npy")
@@ -48,8 +40,6 @@ ob = bpy.data.objects.new(ob_name, mesh)
 
 mesh.from_pydata(vertices, [], faces)
 
-#vob = bpy.data.objects.new("Verts", mesh)
-#context.collection.objects.link(vob)
 bpy.context.scene.collection.objects.link(ob)
 
 # https://blender.stackexchange.com/a/280720; 13.10.2023 08:21
